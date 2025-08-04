@@ -238,12 +238,6 @@ example/*.json
 secrets.json
 config.json
 
-# Docker
-.dockerignore
-Dockerfile
-docker-compose.yml
-.docker/
-
 # Backup files
 *.bak
 *.backup
