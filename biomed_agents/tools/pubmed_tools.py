@@ -7,17 +7,9 @@ from typing import Optional, List, Dict, Any
 from langchain_core.tools import tool
 from pydantic import BaseModel, Field
 
-# Import existing PubMed clients
-import sys
-import os
-pubmed_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'pubmed-mcp')
-sys.path.append(pubmed_path)
-
-try:
-    from mcp_simple_pubmed.pubmed_client import PubMedClient
-    from mcp_simple_pubmed.fulltext_client import FullTextClient
-except ImportError as e:
-    raise ImportError(f"Could not import PubMed clients. Ensure pubmed-mcp is available. Error: {e}")
+# Import local PubMed clients
+from .pubmed_client import PubMedClient
+from .fulltext_client import FullTextClient
 
 
 def get_pubmed_clients():

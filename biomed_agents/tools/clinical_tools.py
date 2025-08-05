@@ -11,10 +11,6 @@ from pydantic import BaseModel, Field
 import sys
 import os
 
-# Add clinical-trial-mcp to path
-clinical_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), 'clinical-trial-mcp')
-sys.path.append(clinical_path)
-
 try:
     from pytrials.client import ClinicalTrials
 except ImportError as e:
